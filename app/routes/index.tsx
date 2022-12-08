@@ -1,252 +1,244 @@
 import { Link } from "@remix-run/react";
 
-import { useOptionalUser } from "~/utils";
+// import { useOptionalUser } from "~/utils";
 
 export default function Index() {
-  const user = useOptionalUser();
+  // const user = useOptionalUser();
+  const DATA_STUDENT = [
+    {
+        id: '00000041073',
+        name: 'Umar Haqi',
+        email: 'umar.haqi@student.umn.ac.id',
+        regisTerm: 'Semester Ganjil 2022/2023',
+        program: 'Informatika',
+        university: 'Universitas Multimedia Nusantara',
+        result: 'Uploaded',
+        revStat: 'Not Reviewed',
+    },
+    {
+        id: '00000055128',
+        name: 'Elfajar Bintang Samudera',
+        email: 'elfajar.bintang@student.umn.ac.id',
+        regisTerm: 'Semester Ganjil 2022/2023',
+        program: 'Informatika',
+        university: 'Universitas Multimedia Nusantara',
+        result: 'Uploaded',
+        revStat: 'Not Reviewed',
+    },
+    {
+        id: '00000011234',
+        name: 'Gerald Nicholas',
+        email: 'ger.nic@student.umn.ac.id',
+        regisTerm: 'Semester Genap 2021/2022',
+        program: 'Informatika',
+        university: 'Universitas Multimedia Nusantara',
+        result: 'Uploaded',
+        revStat: 'Not Reviewed',
+    },
+
+  ]
+
   return (
-    <>
-      
-      <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-      
-      <div className=" bg-blue-600 font-sans">
-        
-        {/* Sidebar start */}
-        <div className=" sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
-          {/* Sidebar Header */}
-          <div className="text-gray-100 text-xl">
-            <div className="p-2 mt-1 flex items-center text-slate-100">
-              <svg role="img" className="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>/e/</title>
-                <path d="M13.13812.05332C9.6246-.2791 6.0635.95029 3.49234 3.53409.0641 6.97916-.94746 12.17083.93662 16.65094c1.88408 4.48013 6.30246 7.38884 11.16248 7.3483a2.27493 2.27493 0 10-.03759-4.54888c-3.02833.02526-5.75722-1.77058-6.93123-4.56223-1.174-2.79164-.54918-5.99816 1.58702-8.14484 2.13619-2.14669 5.339-2.78735 8.13635-1.62703 2.07161.85929 3.59079 2.57925 4.24094 4.64104H12.0506a2.27505 2.27505 0 100 4.5501h9.67488a2.27493 2.27493 0 002.27445-2.26717c.0167-4.86014-2.91357-9.264-7.40286-11.12612-1.12232-.46552-2.28778-.74998-3.45895-.8608Z"/>
-              </svg>
-              <h1 className="font-bold text-gray-200 ml-3">Universitas Multimedia Nusantara</h1>
-              <svg className=" ml-20 cursor-pointer lg:hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <hr className="my-2 text-gray-600"/>
-          </div>
+  <main>
+    {/* <h1>Konversi page</h1>
+    <Link to="/">Go back to main page</Link> */}
 
-          {/* Search Bar */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="fill-current w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input type="text" placeholder="Search" className="text-sm ml-4 w-full bg-transparent focus:outline-none"/>
-          </div>
-
-          {/* Home button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-              <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-            </svg>
-            <span className="ml-4 font-semibold">Home</span>
-          </div>
-          
-          {/* Registrasi button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
-              <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Registration</span>
-          </div>
-
-          {/* Monitoring button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fill-rule="evenodd" d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z" clip-rule="evenodd" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Monitoring Registration</span>
-          </div>
-
-          {/* Cover Letter button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-              <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Cover Letter</span>
-          </div>
-          
-          {/* Complete Registration button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fill-rule="evenodd" d="M9 1.5H5.625c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5zm6.61 10.936a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 14.47a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-              <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Complete Registration</span>
-          </div>
-          
-          {/* Daily Task button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clip-rule="evenodd" />
-              <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zm9.586 4.594a.75.75 0 00-1.172-.938l-2.476 3.096-.908-.907a.75.75 0 00-1.06 1.06l1.5 1.5a.75.75 0 001.116-.062l3-3.75z" clip-rule="evenodd" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Daily Task</span>
-          </div>
-
-          {/* Exam button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
-            </svg>
-
-
-            <span className="ml-4 font-semibold">Exam</span>
-          </div>
-
-          {/* Upload button */}
-          <div className="p-2 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fill-rule="evenodd" d="M10.5 3.75a6 6 0 00-5.98 6.496A5.25 5.25 0 006.75 20.25H18a4.5 4.5 0 002.206-8.423 3.75 3.75 0 00-4.133-4.303A6.001 6.001 0 0010.5 3.75zm2.03 5.47a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72v4.94a.75.75 0 001.5 0v-4.94l1.72 1.72a.75.75 0 101.06-1.06l-3-3z" clip-rule="evenodd" />
-            </svg>
-
-            <span className="ml-4 font-semibold">Upload</span>
-          </div>
-
-        </div>
-        {/* Sidebar end */}
-
-      </div>
-
-      {/* <div className="relative sm:pb-16 sm:pt-8">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="https://user-images.githubusercontent.com/1500684/157774694-99820c51-8165-4908-a031-34fc371ac0d6.jpg"
-                alt="Sonic Youth On Stage"
-              />
-              <div className="absolute inset-0 bg-[color:rgba(254,204,27,0.5)] mix-blend-multiply" />
-            </div>
-            <div className="relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pb-20 lg:pt-32">
-              <h1 className="text-center text-6xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                <span className="block uppercase text-yellow-500 drop-shadow-md">
-                  Indie Stack
-                </span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-                Check the README.md file for instructions on how to get this
-                project deployed.
-              </p>
-              <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                {user ? (
-                  <Link
-                    to="/notes"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-yellow-700 shadow-sm hover:bg-yellow-50 sm:px-8"
-                  >
-                    View Notes for {user.email}
-                  </Link>
-                ) : (
-                  <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <Link
-                      to="/join"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-yellow-700 shadow-sm hover:bg-yellow-50 sm:px-8"
-                    >
-                      Sign up
-                    </Link>
-                    <Link
-                      to="/login"
-                      className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 font-medium text-white hover:bg-yellow-600"
-                    >
-                      Log In
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <a href="https://remix.run">
-                <img
-                  src="https://user-images.githubusercontent.com/1500684/158298926-e45dafff-3544-4b69-96d6-d3bcc33fc76a.svg"
-                  alt="Remix"
-                  className="mx-auto mt-16 w-full max-w-[12rem] md:max-w-[16rem]"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8">
-          <div className="mt-6 flex flex-wrap justify-center gap-8">
-            {[
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764397-ccd8ea10-b8aa-4772-a99b-35de937319e1.svg",
-                alt: "Fly.io",
-                href: "https://fly.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764395-137ec949-382c-43bd-a3c0-0cb8cb22e22d.svg",
-                alt: "SQLite",
-                href: "https://sqlite.org",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764484-ad64a21a-d7fb-47e3-8669-ec046da20c1f.svg",
-                alt: "Prisma",
-                href: "https://prisma.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764276-a516a239-e377-4a20-b44a-0ac7b65c8c14.svg",
-                alt: "Tailwind",
-                href: "https://tailwindcss.com",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764454-48ac8c71-a2a9-4b5e-b19c-edef8b8953d6.svg",
-                alt: "Cypress",
-                href: "https://www.cypress.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772386-75444196-0604-4340-af28-53b236faa182.svg",
-                alt: "MSW",
-                href: "https://mswjs.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772447-00fccdce-9d12-46a3-8bb4-fac612cdc949.svg",
-                alt: "Vitest",
-                href: "https://vitest.dev",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772662-92b0dd3a-453f-4d18-b8be-9fa6efde52cf.png",
-                alt: "Testing Library",
-                href: "https://testing-library.com",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772934-ce0a943d-e9d0-40f8-97f3-f464c0811643.svg",
-                alt: "Prettier",
-                href: "https://prettier.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772990-3968ff7c-b551-4c55-a25c-046a32709a8e.svg",
-                alt: "ESLint",
-                href: "https://eslint.org",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157773063-20a0ed64-b9f8-4e0b-9d1e-0b65a3d4a6db.svg",
-                alt: "TypeScript",
-                href: "https://typescriptlang.org",
-              },
-            ].map((img) => (
-              <a
-                key={img.href}
-                href={img.href}
-                className="flex h-16 w-32 justify-center p-1 grayscale transition hover:grayscale-0 focus:grayscale-0"
-              >
-                <img alt={img.alt} src={img.src} className="object-contain" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div> */}
-    </main>
-    </>
     
+      <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+          <div className="flex flex-grow flex-col overflow-y-auto bg-sky-700 pt-5">
+              <div className="flex flex-shrink-0 items-center px-10 py-4">
+                  {/* Logo UMN */}
+                  <img src="https://www.umn.ac.id/wp-content/uploads/2022/11/Logo-web-UMN2-2.png"/>
+                  </div>
+                  <div className="mt-5 flex flex-1 flex-col">
+                      <nav className="flex-1 space-y-1 px-2 pb-4"><a href="#"
+                              className="bg-sky-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"><svg
+                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                  stroke="currentColor" aria-hidden="true" className="mr-3 h-6 w-6 flex-shrink-0 text-sky-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                  </path>
+                              </svg>Dashboard</a><a href="#"
+                              className="text-sky-100 hover:bg-sky-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md"><svg
+                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                  stroke="currentColor" aria-hidden="true" className="mr-3 h-6 w-6 flex-shrink-0 text-sky-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z">
+                                  </path>
+                              </svg>Registrasi</a><a href="#"
+                              className="text-sky-100 hover:bg-sky-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md"><svg
+                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                  stroke="currentColor" aria-hidden="true" className="mr-3 h-6 w-6 flex-shrink-0 text-sky-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z">
+                                  </path>
+                              </svg>Konversi</a><a href="#"
+                              className="text-sky-100 hover:bg-sky-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md"><svg
+                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                  stroke="currentColor" aria-hidden="true" className="mr-3 h-6 w-6 flex-shrink-0 text-sky-300">
+                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5">
+                                  </path>
+                              </svg>Kerjasama</a></nav>
+                  </div>
+                  </div>
+                  </div>
+                  <div className="flex flex-1 flex-col md:pl-64">
+                      <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow"><button type="button"
+                              className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 md:hidden"><span
+                                  className="sr-only">Open sidebar</span><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12">
+                                  </path>
+                              </svg></button>
+                          <div className="flex flex-1 justify-between px-4">
+                              <div className="flex flex-1">
+                                  <form className="flex w-full md:ml-0" action="#" method="GET"><label htmlFor="search-field"
+                                          className="sr-only">Search</label>
+                                      <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                                          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center"><svg
+                                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                  aria-hidden="true" className="h-5 w-5">
+                                                  <path fill-rule="evenodd"
+                                                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                                      clip-rule="evenodd"></path>
+                                              </svg></div><input id="search-field"
+                                              className="block h-full w-full border-transparent py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:text-sm"
+                                              placeholder="Search" type="search" name="search"/>
+                                      </div>
+                                  </form>
+                              </div>
+                              <div className="ml-4 flex items-center md:ml-6"><button type="button"
+                                      className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"><span
+                                          className="sr-only">View notifications</span><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                          viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0">
+                                          </path>
+                                      </svg></button>
+                                  <div className="relative ml-3" data-headlessui-state="">
+                                      <div><button
+                                              className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                                              id="headlessui-menu-button-:Rqjm:" type="button" aria-haspopup="true" aria-expanded="false"
+                                              data-headlessui-state=""><span className="sr-only">Open user menu</span>
+                                              <img
+                                                  className="h-8 w-8 rounded-full"
+                                                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                                                  alt=""/>
+                                                  </button>
+                                                </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      {/* Main area */}
+                      <main>
+                          <div className="py-6">
+                              <div className="mx-auto max-w-7xl px-2 sm:px-6 md:px-6">
+                                  <h1 className="text-2xl font-semibold text-gray-900">Monitor KHS</h1>
+                              </div>
+                              <div className="mx-auto max-w-7xl px-2 sm:px-6 md:px-6">
+                                  <div className="py-4">
+                                      
+                                      <div className="pt-10">
+                                          <div>
+                                              <div className="sm:flex sm:items-center">
+                                                  <div className="sm:flex-auto">
+                                                      <h1 className="text-xl font-semibold text-gray-900">Students</h1>
+                                                      <p className="mt-2 text-sm text-gray-700">Showing 1-10 of 48 items.</p>
+                                                  </div>
+                                                  <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+                                                      {/* <button type="button"
+                                                          className="inline-flex items-center justify-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto">
+                                                          Add student
+                                                      </button> */}
+                                                      </div>
+                                              </div>
+                                              {/* Table start */}
+                                              <div className="mt-8 flex flex-col">
+                                                  <div className="-my-2 -mx-6 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                      <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                                                          <div
+                                                              className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+                                                              <table className="min-w-full divide-y divide-gray-300">
+                                                                  <thead className="bg-gray-50">
+                                                                      <tr>
+                                                                          <th scope="col"
+                                                                              className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                                                                              ID</th>
+                                                                          <th scope="col"
+                                                                              className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                                                                              Name</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Email</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Registration Term</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Program</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              University</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Learning Result Card</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Review Status</th>
+                                                                          <th scope="col"
+                                                                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                              Review</th>
+                                                                          <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6"><span
+                                                                                  className="sr-only">Edit</span></th>
+                                                                      </tr>
+                                                                  </thead>
+                                                                  <tbody className="divide-y divide-gray-200 bg-white">
+                                                                      {DATA_STUDENT.map(data => (
+                                                                          <tr>
+                                                                          <td
+                                                                              className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                                              {data.id}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.name}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.email}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.regisTerm}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.program} </td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.university}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.result}</td>
+                                                                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                              {data.revStat}</td>
+                                                                          
+                                                                          <td
+                                                                              className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                                              <a href="#"
+                                                                                  className="text-sky-600 hover:text-sky-900">Review<span
+                                                                                      className="sr-only">,
+                                                                                      Lindsay Walton
+                                                                                  </span></a></td>
+                                                                      </tr>
+                                                                      ))}
+                                                                      
+                                                                  </tbody>
+                                                              </table>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </main>
+                  </div>
+  </main>
   );
 }
